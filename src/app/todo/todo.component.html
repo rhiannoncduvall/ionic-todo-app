@@ -1,3 +1,16 @@
-<p>
-  todo works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      To Do
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>To Do List</h1>
+  <ion-input placeholder="What needs to be done?" (keyup.enter)="addTodo()" ngModel="newTodo.title"></ion-input>
+
+  <ion-list>
+    <ion-item>Item</ion-item>
+  </ion-list>
+</ion-content>
