@@ -1,23 +1,25 @@
 <ion-card class="login-ion-card-content">
     <ion-card-content class="login">
         <ion-card-header class="title">
-            <h2 class="welcome">Welcome</h2>
-            <h5 class="hint">Please register for an account below</h5>
+            <h2 class="welcome">Welcome!</h2>
+            <h5 class="hint">Login as an Existing User</h5>
         </ion-card-header>
         <ion-card class="login-group">
             <ion-card-content>
-                <input type="text" name="email" clrInput placeholder="Email" />
+
+                <input type="text" name="username" clrInput placeholder="Username" />
             </ion-card-content>
             <ion-card-content>
+
                 <input type="password" name="password" clrPassword placeholder="Password" />
             </ion-card-content>
             <ion-card-content>
-                <label>Date of Birth  </label>
-                <input type="text" name="dateOfBirth" clrPassword placeholder="mm / dd / yyyy" />
+                <label>Remember me</label>
+                <input type="checkbox" name="rememberMe" clrCheckbox/>
             </ion-card-content>
-            <ion-button type="submit" class="btn btn-primary" [routerLink]="['/todo']">Register</ion-button>
+            <ion-button type="submit" class="btn btn-primary" [routerLink]="['/todo']">LOGIN</ion-button>
 
-            <a href="/login" class="signup">Already have an account?</a>
+            <a href="/register" class="signup">Sign up for an account</a>
         </ion-card>
     </ion-card-content>
 </ion-card>

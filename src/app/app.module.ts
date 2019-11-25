@@ -12,10 +12,10 @@ import { TodoComponent } from './todo/todo.component';
 import { TodoService } from './todo.service';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
-
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoComponent, RegisterComponent],
+  declarations: [AppComponent, TodoComponent, RegisterComponent, LoginComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
