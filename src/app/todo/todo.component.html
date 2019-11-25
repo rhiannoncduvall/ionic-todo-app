@@ -12,6 +12,10 @@
   [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()"></ion-input>
 
   <ion-list class="todo-list">
-    <ion-item *ngFor="let todo of this._todoServe.todos" [class.completed]="todo.complete">Item</ion-item>
+    <ion-item *ngFor="let todo of this._todoServe.todos" [class.completed]="todo.complete">
+      <ion-checkbox class="toggle" (click)="toggleTodoComplete(todo)" [checked]="todo.complete"></ion-checkbox>
+      <ion-label>{{ todo.title }}</ion-label>
+      <ion-button color="warning" class="destroy" click="removeTodo(todo)">delete</ion-button>
+    </ion-item>
   </ion-list>
 </ion-content>
