@@ -8,9 +8,10 @@
 
 <ion-content class="ion-padding">
   <h1>To Do List</h1>
-  <ion-input placeholder="What needs to be done?" (keyup.enter)="addTodo()" ngModel="newTodo.title"></ion-input>
+  <ion-input placeholder="What needs to be done?" 
+  [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()"></ion-input>
 
-  <ion-list>
-    <ion-item>Item</ion-item>
+  <ion-list class="todo-list">
+    <ion-item *ngFor="let todo of this._todoServe.todos" [class.completed]="todo.complete">Item</ion-item>
   </ion-list>
 </ion-content>
