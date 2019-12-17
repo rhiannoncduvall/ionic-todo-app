@@ -13,12 +13,16 @@ import { TodoService } from './todo.service';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { UserService } from './user.service';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [AppComponent, TodoComponent, RegisterComponent, LoginComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
+  imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
+    UserService,
     TodoService,
     StatusBar,
     SplashScreen,

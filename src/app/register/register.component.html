@@ -6,18 +6,27 @@
         </ion-card-header>
         <ion-card class="login-group">
             <ion-card-content>
-                <input type="text" name="email" clrInput placeholder="Email" />
+                <input type="text" [(ngModel)]="this.userService.userInfo.firstName" name="firstName" clrInput placeholder="First Name" />
             </ion-card-content>
             <ion-card-content>
-                <input type="password" name="password" clrPassword placeholder="Password" />
+                <input type="text" [(ngModel)]="this.userService.userInfo.lastName" name="lastName" clrInput placeholder="Last Name" />
             </ion-card-content>
             <ion-card-content>
-                <label>Date of Birth  </label>
-                <input type="text" name="dateOfBirth" clrPassword placeholder="mm / dd / yyyy" />
+                <input type="text" [(ngModel)]="this.userService.userInfo.email" name="email" clrInput placeholder="Email" />
             </ion-card-content>
-            <ion-button type="submit" class="btn btn-primary" [routerLink]="['/todo']">Register</ion-button>
+            <ion-card-content>
+                <input [(ngModel)]="this.userService.userInfo.password" type="password" name="password" clrPassword placeholder="Password" />
+            </ion-card-content>
+
+            <ion-button type="submit" (click)="register(this.userService.userInfo)" class="btn btn-primary" [routerLink]="['/todo']">Register</ion-button>
 
             <a href="/login" class="signup">Already have an account?</a>
+            <p>{{this.userService.userInfo.firstName}}</p>
+            <p>{{this.userService.userInfo.lastName}}</p>
+            <p>{{this.userService.userInfo.email}}</p>
+            <p>{{this.userService.userInfo.password}}</p>
+
+
         </ion-card>
     </ion-card-content>
 </ion-card>

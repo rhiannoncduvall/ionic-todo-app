@@ -7,17 +7,17 @@
         <ion-card class="login-group">
             <ion-card-content>
 
-                <input type="text" name="username" clrInput placeholder="Username" />
+                <input type="text" [(ngModel)]="this.userService.loginInfo.email" name="email" clrInput placeholder="Email" />
             </ion-card-content>
             <ion-card-content>
 
-                <input type="password" name="password" clrPassword placeholder="Password" />
+                <input type="password" [(ngModel)]="this.userService.loginInfo.password" name="password" clrPassword placeholder="Password" />
             </ion-card-content>
             <ion-card-content>
                 <label>Remember me</label>
                 <input type="checkbox" name="rememberMe" clrCheckbox/>
             </ion-card-content>
-            <ion-button type="submit" class="btn btn-primary" [routerLink]="['/todo']">LOGIN</ion-button>
+            <ion-button type="submit" (click)="this.login(this.userService.loginInfo)" class="btn btn-primary" [routerLink]="['/todo']">LOGIN</ion-button>
 
             <a href="/register" class="signup">Sign up for an account</a>
         </ion-card>
