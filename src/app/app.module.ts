@@ -17,8 +17,10 @@ import { UserService } from './user.service';
 import {HttpClientModule} from '@angular/common/http';
 
 
+import { MenuComponent } from './menu/menu.component';
+
 @NgModule({
-  declarations: [AppComponent, TodoComponent, RegisterComponent, LoginComponent],
+  declarations: [AppComponent, TodoComponent, RegisterComponent, LoginComponent, MenuComponent],
   entryComponents: [],
   imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
