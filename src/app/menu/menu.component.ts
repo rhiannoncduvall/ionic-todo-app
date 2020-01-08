@@ -9,7 +9,20 @@ import { Router, RouterModule, ActivatedRoute } from '@angular/router';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-
+  public appPages = [
+    {
+      title: 'Todos',
+      url: '/home',
+    },
+    {
+      title: 'Login',
+      url: '/login'
+    },
+    {
+      title: 'Register',
+      url: '/register'
+    }
+  ]
   constructor(private router: Router, private actRoute: ActivatedRoute) { }
 
 
