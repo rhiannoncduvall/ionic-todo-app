@@ -6,9 +6,9 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'todo', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   // { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
-  { path: 'home', redirectTo: 'todo', pathMatch: 'full'},
+  { path: 'home', redirectTo: 'login', pathMatch: 'full'},
   { path: 'todo', component: TodoComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
