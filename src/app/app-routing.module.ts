@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { TodoComponent } from './todo/todo.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'todo', pathMatch: 'full' },
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: 'home', redirectTo: 'todo', pathMatch: 'full'},
   { path: 'todo', component: TodoComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'menu', component: MenuComponent}
 ];
 
 @NgModule({

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule, ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent {
 
-  constructor() { }
+  constructor(private router: Router, private actRoute: ActivatedRoute) { }
 
 
 }
