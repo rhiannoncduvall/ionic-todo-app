@@ -11,26 +11,32 @@
     <ion-card class="login-ion-card-content">
         <ion-card-content class="login">
             <ion-card-header class="title">
-                <h2 class="welcome">Welcome!</h2>
-                <h5 class="hint">Login as an Existing User</h5>
+                <ion-card-title>Welcome!</ion-card-title>
+                <ion-card-subtitle>Login as an Existing User</ion-card-subtitle>
             </ion-card-header>
-            <ion-card class="login-group">
-                <ion-card-content>
+                    <ion-input type="email" [(ngModel)]="userService.loginInfo.email" clearInput placeholder="Email">
+                    </ion-input>
+                    
+                    <!-- <input type="text" [(ngModel)]="this.userService.loginInfo.email" name="email" clrInput placeholder="Email" /> -->
+                    <ion-input type="password" [(ngModel)]="userService.loginInfo.password" name="password" clearInput placeholder="Password"></ion-input>
 
-                    <input type="text" [(ngModel)]="this.userService.loginInfo.email" name="email" clrInput placeholder="Email" />
-                </ion-card-content>
-                <ion-card-content>
+                    <!-- <input type="password" [(ngModel)]="this.userService.loginInfo.password" name="password" clrPassword placeholder="Password" /> -->
 
-                    <input type="password" [(ngModel)]="this.userService.loginInfo.password" name="password" clrPassword placeholder="Password" />
-                </ion-card-content>
-                <ion-card-content>
-                    <label>Remember me</label>
-                    <input type="checkbox" name="rememberMe" clrCheckbox/>
-                </ion-card-content>
-                <ion-button type="submit" (click)="this.login(this.userService.loginInfo)" class="btn btn-primary" [routerLink]="['/todo']">LOGIN</ion-button>
+                <br>
+                <ion-item>
+                <ion-checkbox name="rememberMe"></ion-checkbox>
+                <ion-label>Remember me</ion-label>
+                </ion-item>
+                
+                <!-- <label>Remember me</label> -->
+                <!-- <input type="checkbox" name="rememberMe" clrCheckbox/> -->
 
-                <a href="/register" class="signup">Sign up for an account</a>
-            </ion-card>
+                <br>
+
+                <ion-button type="submit" (click)="login(userService.loginInfo)" class="btn btn-primary" [routerLink]="['/todo']">LOGIN</ion-button>
+                <p>
+                    <a href="/register" class="signup">Sign up for an account</a>
+                </p>
         </ion-card-content>
     </ion-card>
 </ion-content>
