@@ -14,15 +14,28 @@
             <h5 class="hint">Please register for an account below</h5>
         </ion-card-header>
         <ion-card-content class="login login-group">
-            <input class="form-item" type="text" [(ngModel)]="this.userService.userInfo.firstName" name="firstName" clrInput placeholder="First Name" />
+            <ion-input type="text" [(ngModel)]="userService.userInfo.firstName" placeholder="First Name" clearInput>
+            </ion-input>
+            
+            <!-- <input class="form-item" type="text" [(ngModel)]="this.userService.userInfo.firstName" name="firstName" clrInput placeholder="First Name" /> -->
+            
             <br>
-            <input class="form-item" type="text" [(ngModel)]="this.userService.userInfo.lastName" name="lastName" clrInput placeholder="Last Name" />
+            <ion-input type="text" [(ngModel)]="userService.userInfo.lastName" clearInput placeholder="Last Name">
+            </ion-input>
+
+            <!-- <input class="form-item" type="text" [(ngModel)]="this.userService.userInfo.lastName" name="lastName" clrInput placeholder="Last Name" /> -->
             <br>
-            <input class="form-item" type="text" [(ngModel)]="this.userService.userInfo.email" name="email" clrInput placeholder="Email" />
+
+            <ion-input type="email" [(ngModel)]="userService.userInfo.email" clearInput placeholder="Email"></ion-input>
+            
+            <!-- <input class="form-item" type="text" [(ngModel)]="this.userService.userInfo.email" name="email" clrInput placeholder="Email" /> -->
             <br>
-            <input class="form-item" [(ngModel)]="this.userService.userInfo.password" type="password" name="password" clrPassword placeholder="Password" />
+
+            <ion-input [(ngModel)]="userService.userInfo.password" type="password" clearInput clearOnEdit placeholder="Password"></ion-input>
+
+            <!-- <input class="form-item" [(ngModel)]="this.userService.userInfo.password" type="password" name="password" clrPassword placeholder="Password" /> -->
             <br>
-            <ion-button class="form-item" type="submit" (click)="register(this.userService.userInfo)" class="btn btn-primary" [routerLink]="['/todo']">Register</ion-button>
+            <ion-button class="form-item" type="submit" (click)="register(userService.userInfo)" class="btn btn-primary" [routerLink]="['/todo']">Register</ion-button>
             <br>
             <a href="/login" class="signup form-item">Already have an account?</a>
 
