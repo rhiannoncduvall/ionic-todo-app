@@ -11,12 +11,28 @@
   <h1>To Do List</h1>
   <ion-input placeholder="What needs to be done?" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()"></ion-input>
 
-<!-- display todos using ion list -->
   <ion-list class="todo-list">
-    <ion-item *ngFor="let todo of this._todoServe.todos" [class.completed]="todo.complete">
-      <ion-checkbox class="toggle" (click)="toggleTodoComplete(todo)" [checked]="todo.complete" slot="start"></ion-checkbox>
-      <ion-label>{{ todo.title }}</ion-label>
-      <ion-button color="danger" click="removeTodo(todo)" slot="end">delete</ion-button>
-    </ion-item>
+    <ion-item-sliding *ngFor="let todo of _todoServe.todos" [class.completed]="todo.complete">
+      <ion-item (click)="toggleTodoComplete(todo)" [class.completed]="todo.complete">
+        <ion-label>{{ todo.title }}</ion-label>
+      </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option (click)="removeTodo(todo)" color="danger">Remove</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
+
+<div *ngIf="_todoServe.completedTodos.length > 0">
+  <h4>Completed</h4>
+  <ion-list class="todo-list">
+    <ion-item-sliding *ngFor="let todo of _todoServe.completedTodos" [class.completed]="todo.complete">
+      <ion-item>
+        <ion-label>{{ todo.title }}</ion-label>
+      </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option (click)="removeCompletedTodo(todo)" color="danger">Remove</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</div>
 </ion-content>

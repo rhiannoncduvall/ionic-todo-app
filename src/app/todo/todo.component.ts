@@ -27,10 +27,15 @@ export class TodoComponent {
 
   toggleTodoComplete(todo) {
     this._todoServe.toggleTodoComplete(todo);
+    this._todoServe.addCompletedTodo(todo);
   }
 
   removeTodo(todo) {
     this._todoServe.deleteTodoById(todo.id);
+  }
+
+  removeCompletedTodo(todo) {
+    this._todoServe.deleteCompletedTodoById(todo.id)
   }
 
   get todos() {

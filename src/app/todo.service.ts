@@ -15,8 +15,10 @@ export class Todo {
 })
 export class TodoService {
   lastId: number = 0;
+  completedLastId: number = 0;
 
   todos: Todo[] = [];
+  completedTodos: Todo[] = [];
 
   constructor() { }
 
@@ -29,10 +31,24 @@ export class TodoService {
       this.todos.push(todo);
       return this;
     }
+
+    addCompletedTodo(todo: Todo): TodoService {
+      this.deleteTodoById(todo.id)
+      todo.id = ++this.completedLastId;
+      this.completedTodos.push(todo);
+      console.log(this.completedTodos)
+      return this;
+    }
   
     // Simulate DELETE /todos/:id
     deleteTodoById(id: number): TodoService {
       this.todos = this.todos
+        .filter(todo => todo.id !== id);
+      return this;
+    }
+
+    deleteCompletedTodoById(id: number): TodoService {
+      this.completedTodos = this.completedTodos
         .filter(todo => todo.id !== id);
       return this;
     }
